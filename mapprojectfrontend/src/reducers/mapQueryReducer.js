@@ -4,6 +4,7 @@ import { setNotification } from './notificationTempReducer'
 import { setLoading } from './loadingReducer'
 import { setLongLoading } from './loadingReducer'
 import { setItemToSearch } from './searchReducer'
+import { setBounds } from './boundsReducer'
 
 export const getMapQueryData = (parameterData) => {
     return async dispatch => {
@@ -57,8 +58,9 @@ export const getMapQueryDataSearchNearLocation = (itemObject) => {
             })
             if (propertyItem.length === 0) {
                 dispatch(setNotification({message:'aucun résultat dans un rayon de 10km', style:'warning', time:5000}))
-            }
+            } 
             dispatch(setLoading(false))
+
     }
 }
 

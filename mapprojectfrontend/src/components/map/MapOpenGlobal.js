@@ -22,18 +22,19 @@ const MapOpenGlobal = () => {
       const searchItemvalue = useSelector(store => store.searchItem)
 
       const [mapData, setMapData ] = useState([])
- 
+      const [isGeoloc, setIsGeoloc ] = useState(false)
+
       const defaultCityCoordinates = {'latitude':45.5019, 'longitude':-73.5674}
 
 
       useEffect(() => {
             setMapData(mapQueryData)
             if (mapQueryData.length > 0) {
-                  if (searchItemvalue) {
+                  if (searchItemvalue || isGeoloc) {
                         let newBounds = []
                         mapQueryData.map((item) =>newBounds.push([item.lat, item.lon]) )
-                        dispatch(setBounds(newBounds))
-                        dispatch(resetItemToSearch())
+                        dispatch(setBounds(newBounds)).then(dispatch(resetItemToSearch())).then(setIsGeoloc(false))
+                        
                   }
               
             } else {
@@ -46,7 +47,7 @@ const MapOpenGlobal = () => {
       
   return (
       <div className='divSearchMap'>
-            <CurrentLocation defaultCoordinates={defaultCityCoordinates} />
+            <CurrentLocation defaultCoordinates={defaultCityCoordinates} setIsGeoloc={setIsGeoloc} />
 
             <div className='mapGlobal' id='map' >
                   <MapOpen mapQueryData={mapData} />
