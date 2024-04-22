@@ -63,7 +63,7 @@ AUTH_USER_MODEL = 'mapApp.User'
 CORS_ALLOW_CREDENTIALS = True
 
 CORS_ALLOWED_ORIGINS = [
-    'http://localhost:3000', "localjob.onrender.com"
+    'http://localhost:3000', "https://localjob.onrender.com"
 ]
 
 

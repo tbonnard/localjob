@@ -88,7 +88,10 @@ export const getUserInfo = () =>{
             type: "GET_USER_INFO",
             data: userDetails
         })
-        dispatch(checkSave({user:userDetails.uuid }))
+        if(userDetails) {
+            dispatch(checkSave({user:userDetails.uuid }))
+        }
+        
     }
 }
 
