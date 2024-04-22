@@ -1,7 +1,7 @@
 from django.db import models
 import uuid
 from django.contrib.auth.models import AbstractUser
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, date
 from django.utils.translation import gettext_lazy as _
 from django.core.exceptions import ValidationError
 
@@ -91,11 +91,11 @@ class Property(models.Model):
 
 
 def get_default_now_my_datetime():
-    return datetime.date.today() + timedelta(days=30)
+    return date.today()
 
 
 def get_default_my_datetime():
-    return datetime.date.today()
+    return date.today()
 
 
 class Project(models.Model):
