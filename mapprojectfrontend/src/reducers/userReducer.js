@@ -3,6 +3,7 @@ import userServices from '../services/userServices'
 
 import { setNotification } from './notificationTempReducer'
 import { setLoading } from './loadingReducer'
+import { checkSave } from './saveReducer'
 
 export const userLogin = (credentials) => {
     return async dispatch => {
@@ -87,6 +88,7 @@ export const getUserInfo = () =>{
             type: "GET_USER_INFO",
             data: userDetails
         })
+        dispatch(checkSave({user:userDetails.uuid }))
     }
 }
 

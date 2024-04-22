@@ -42,8 +42,8 @@ function App() {
   useEffect(() => {
     csrfServices.getCsrfToken()
     dispatch(getUserInfo())
-  },[dispatch])
 
+  },[dispatch])
 
   return (
       <div className="App">

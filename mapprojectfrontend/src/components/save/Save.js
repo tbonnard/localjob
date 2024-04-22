@@ -40,13 +40,6 @@ const Save = ({project}) => {
   },[project, savedJobs])
 
 
-  useEffect(() => {
-    if (user) {
-      dispatch(checkSave({user:user.uuid }))
-    }
-  },[user, dispatch])
-
-
 
   const handleClickSave = () => {        
     dispatch(addSave({user:user.uuid, job:project.id}))
