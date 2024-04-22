@@ -1,0 +1,422 @@
+/* https://www.behance.net/gallery/99193441/Message-App-Design-(Freebie)?tracking_source=search_projects_recommended|direct+message */
+
+.projectsGlobal {
+  margin: 0 auto ;
+  max-width: 850px;
+  margin-top: 150px ;
+}
+
+.projectsList{
+  width: 90%;
+  /* padding: 0px 20px;*/
+  /* margin: 0 0 150px 0;  */
+}
+
+.projectFormInput{
+  background-color: white !important;
+  width: 75%;
+  outline: none;
+  border: none;
+  border-radius: 5px !important;
+  padding: 10px;
+  margin: 10px 0;
+}
+
+.projectName {
+  margin: 10px 0 5px 0;
+  font-size: 14px;
+}
+
+.projectName a {
+  text-decoration: none !important;
+  color: var(--textMain) !important ;
+}
+
+.projectDateDiv {
+  /* padding: 10px 10px 0px 0; */
+  text-align: end;
+}
+
+.projectDate {
+  font-size: 12px;
+  color:var(--ultraLightText);
+  /* padding: 0 0 0 10px; */
+}
+
+
+
+/* PROJECT ITEM */
+.ProjectGlobal{
+  border: 1px solid #e2e2e2;
+  text-align: center;
+  margin: 40px 0;
+  padding: 20px 40px;
+  border-radius: 5px;
+}
+
+.ProjectGlobal h2 {
+  padding: 0 10px;
+}
+
+.ProjectGlobalProfile {
+  border: 1px solid rgba(240, 240, 240, 0.25);
+  text-align: left;
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: white;
+  color: var(--textMain);
+  height: auto;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+
+.projectDiv{
+  position: relative;
+  padding: 0 0 0px 0;
+  margin: 10px 10px 0 10px;
+  text-align: left;
+}
+
+/* 
+.projectDivDetails{
+} */
+
+/* .viewDetailsJob{
+  display: flex;
+  justify-content: end; 
+  padding: 0 20px 10px 0;
+} */
+
+.projectDivTags{
+  margin-left: -6px;
+} 
+
+.jobToggleDiv{
+ display: flex;
+ align-items: center;
+ margin-top: 20px;
+ justify-content: center;
+}
+
+.infoJob {
+  font-size: 16px;
+  padding: 3px 0;
+}
+
+
+.infoTag{
+  box-sizing: border-box;
+  min-width: 0;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  /* color: var(--infoText); */
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.3125rem;
+  padding: 2px 10px;
+  border-radius: 10rem;
+  margin: 10px 3px 0 0;
+  height: 25px;
+}
+
+
+.infoTagSolo{
+  box-sizing: border-box;
+  min-width: 0;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  /* color: var(--infoText); */
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.3125rem;
+  padding: 2px 10px;
+  border-radius: 10rem;
+  margin: 0px 3px 0 0;
+  height: 25px;
+}
+
+.infoTagGrey{
+  background-color: rgba(108, 117, 125, 0.1);
+  /* background-color: var(--info); */
+  color: #595959;
+}
+
+
+.infoTagSuccess{
+  background-color: var(--success);
+  color: var(--successText);
+}
+
+.infoTagError{
+  background-color: var(--error);
+  color: var(--errorText);
+}
+
+
+.projectTitleName{
+  /* padding: 15px 0 10px 0; */
+  font-weight: bold;
+  color: var(--blue) !important;
+  text-decoration: none;
+}
+
+
+.projectTitleName:hover{
+  /* padding: 15px 0 10px 0; */
+  font-weight: bold;
+  color: var(--blue) !important;
+  text-decoration: underline;
+}
+
+.propertyTitleProfile{
+  /* position: absolute; */
+  background: none!important;
+  border: none;
+  /* padding: 0!important; */
+  padding: 0 0 0 10px;
+  color: var(--colorSmallText);
+  text-decoration: underline;
+  cursor: pointer;
+  text-underline-offset:10px;
+  /* top: 0px;
+  right: 10px; */
+}
+
+.propertyTitleProfile:hover{
+  text-underline-offset:12px;
+}
+
+
+/* PROJECT DIV TO DISPLAY CREATE LAYER */
+.projectPreDiv {
+  background-color: #fff;
+  height: 100px;
+  border-radius: 50% 0 0% 50%;
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 1000;
+  width: 100px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.projectAddIcon {
+  cursor: pointer;
+  background-image: url('../media/add.png');
+  background-repeat: no-repeat;
+  background-position: bottom;
+  width: 100%;
+  height: 100%;
+  background-position: center;
+}
+
+.projectAddIcon:hover {
+  opacity: 0.8;
+}
+
+
+.projectsLinks{
+  display: flex;
+  justify-content: space-between;
+  padding: 0 10px;
+  margin-top: 15px;
+  align-items: center;
+}
+
+
+.parent {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden; /* Hide overflow content */
+}
+
+
+.triangle1 {
+  width: 100vw;
+  height: 100vh;
+  /* background-color: #fbff7b; */
+  background-color: var(--commerce);
+  clip-path: polygon(0 100%, 0 0, 100% 100%)
+}
+
+
+.text-containerJob {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1; /* Ensure content is above triangles */
+  /* text-align: center; */
+  width: 80%; /* Adjust width as needed */
+  padding: 20px; /* Add padding to ensure content is not too close to edges */
+  background-color: rgba(255, 255, 255,1); /* Adjust background color and opacity as needed */
+  max-height: 80%; /* Ensures content doesn't exceed 80% of the screen height */
+  overflow-y: auto; /* Adds scroll if content exceeds max height */
+  border-radius: 10px;
+}
+
+
+.textJob {
+  color: var(--textMain);
+  font-size: 16px;
+  padding-left: 5%;
+  width: 90%;
+  position: relative;
+}
+
+.projectTitleNameJob {
+  font-weight: bold;
+  color: var(--blue) !important;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.projectTitleNameJobCie {
+  margin: 10px 0;
+}
+
+
+.applyJobGlobal{
+  padding: 40px 0;
+  text-align: center;
+}
+
+.applyJob{
+  display: flex;
+  justify-content: center;
+  margin: 13px 0;
+}
+
+.applyJob a {
+  margin: 10px 20px;
+}
+
+.applyJobIcon{
+  width: 60px;
+  cursor: pointer;
+}
+.applyJobIcon:hover{
+  opacity: 0.7;
+}
+
+.tagJobGlobal{
+  margin: 0px 0 25px 0;
+}
+
+.noJobZone{
+  text-align: center;
+  margin-top: 40px;
+  font-size: 12px;
+  opacity: 0; 
+  animation: fadeInTextNoJob 0.5s ease 0.5s forwards;
+}
+
+@keyframes fadeInTextNoJob {
+  from {
+      opacity: 0; /* L'opacité commence à 0 */
+  }
+  to {
+      opacity: 1; /* L'opacité atteint 1 à la fin de l'animation */
+  }
+}
+
+.saveDiv{
+  position: absolute;
+  top: 0px;
+  right: 0px;
+}
+
+.iconProjectSave {
+  cursor: pointer;
+  width: 15px;
+}
+
+.iconProjectSave:hover {
+  cursor: pointer;
+  opacity: 0.5;
+}
+
+.createDivGroup {
+  position: relative;
+  height: auto;
+  width: 100%;
+  font-size: 14px;
+  background: #fff;
+  padding: 10px 15px;
+  display: block;
+  z-index: 1;
+  line-height: 40px;
+  /* color: var(--colorSmallText); */
+  font-weight: Light;
+  border: 1px solid var(--projectInputDescrition);
+  border-radius: 5px 0px 0px 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+.divInputSalary{
+ width: 96% !important;
+}
+
+.subFieldsSalary{
+  display: flex;
+  justify-content: center;
+}
+
+.divInputSalarySubFields{
+  margin: 0 10px !important;
+ }
+ 
+
+.tabItems{
+  display: flex;
+  justify-content: center;
+}
+
+
+
+/* @media (max-width: 1200px) {
+  .projectFormInput{
+      width: 100% !important;
+  }
+} */
+
+@media (max-width: 1100px) {
+  .projectPreDiv{
+    border-radius: 0% 0% 0% 50%;
+    position: fixed;
+    top: 90px;
+    z-index: 1000;
+    background-color: var(--main);
+    height: 90px;
+  }
+  
+  .projectAddIcon {
+    background-image: url('../media/addWhite.png');
+  }
+/* 
+  .projectFormInput{
+    width: 100% !important;
+  } */
+
+}

@@ -1,0 +1,57 @@
+/* :root {
+    --default: white;
+    --green: #76d45f;
+    --error: #c01f1f;
+    --warning: #d36318;
+  } */
+  
+/* NOTIFICATION */
+.notifGlobal {
+    z-index: 2002;
+    position: fixed;
+    bottom: 100px;
+    /* left: 33.33%; */
+    left: 50%;
+    width: auto;
+    height: 30px;
+    transform: translate(-50%, -50%);
+  }
+  
+  .notif { 
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-size: 14px;
+    font-style: italic;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .error {
+    color: var(--errorText);
+    background-color: var(--error);
+
+  }
+  
+  .success{
+    background-color: var(--success);
+    color: var(--successText);
+  }
+
+  .warning {
+    background-color: var(--warning);
+    color: var(--warningText);
+  }
+
+  .info {
+    background-color: var(--info);
+    color: var(--infoText);
+  }
+
+  
+@media (max-width: 1000px) {
+  .notifGlobal{
+    left: 50%;
+  }
+
+}

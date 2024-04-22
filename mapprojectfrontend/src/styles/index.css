@@ -1,0 +1,156 @@
+:root {
+  --oldmain:#354572;
+  --main:rgba(250,251,255,255);
+  --textMain:#1F1F1F;
+  /* GREEN :#7FB77E; */
+
+  --second:#455A95;
+    /* 5c4f86; */
+  /* GREEN lighter B1D7B4; */
+  --light:#455A95;
+  --lighter: #f5f5f5;
+  --orange:#FFC090;
+  --greenMain : #549359;
+  --greenMainFollow : #508a55;
+  --greenLight:#7fb77e;
+  --projectInputDescrition : #eef1ff;
+  --projectInputDescritionClaimer: #ffe49d;
+  --colorText : #262729;
+  --colorSmallText: #696969;
+  --ultraLightText:#999;
+  --remove: #de6060;
+  --default: white;
+
+  --blue:#1E2875;
+  --blueLight: #29abe2;
+
+  --commerce: #ffe600;
+
+
+  /* NOTIFICATION */
+  --success: #d4edda;
+  --successText:#155724;
+  --error: #f8d7da;
+  --errorText:#721c24;
+  --warning: #fff3cd;
+  --warningText:#856404;
+  --info:#d1ecf1;
+  --infoText: #0c5460;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--main);
+  height: 100%;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+p {
+  margin: 0;
+  padding: 0;
+}
+
+
+.infoText{
+  color: var(--textMain);
+  font-size: 12px;
+  margin-top: 30px;
+}
+
+.infoTextNoMarginTop{
+  color: var(--textMain);
+  font-size: 12px;
+  padding-left: 5px;
+}
+
+
+a, a:visited {
+  text-decoration: none;
+  color: #000;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+
+.toggle {
+  --s: 20px; /* adjust this to control the size*/
+  height: calc(var(--s) + var(--s)/5);
+  width: auto; /* some browsers need this */
+  aspect-ratio: 2.25;
+  border-radius: var(--s);
+  margin: calc(var(--s)/2);
+  display: grid;
+  cursor: pointer;
+  background-color:#e0fcc0;
+  box-sizing: content-box;
+  overflow: hidden;
+  transition: .3s .1s;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+.toggleStatus{
+  background-color:#d7d7d7 !important;
+}
+.toggleStatus:checked {
+  background-color: #84c77e !important;
+}
+
+.toggle:before{
+  content: "";
+  padding: calc(var(--s)/10);
+  --_g: radial-gradient(circle closest-side at calc(100% - var(--s)/2) 50%,#000 96%,#0000);
+  background: 
+    var(--_g) 0 /var(--_p,var(--s)) 100% no-repeat content-box,
+    var(--_g) var(--_p,0)/var(--s)  100% no-repeat content-box,
+    #fff;
+  mix-blend-mode: darken;
+  filter: blur(calc(var(--s)/12)) contrast(11);
+  transition: .4s, background-position .4s .1s,
+    padding cubic-bezier(0,calc(var(--_i,-1)*200),1,calc(var(--_i,-1)*200)) .25s .1s;
+}
+.toggle:checked {
+  background-color: #84c77e;
+}
+.toggle:checked:before {
+  padding: calc(var(--s)/10 + .05px) calc(var(--s)/10);
+  --_p: 100%;
+  --_i: 1;
+}
+
+
+.modalGlobal {
+  position: fixed; /* La modal reste fixe même si l'utilisateur fait défiler la page */
+  z-index: 200; /* Position de la modal au-dessus de tout le reste */
+  left: 0;
+  top: 0;
+  width: 100%; /* Largeur de la modal */
+  height: 100%; /* Hauteur de la modal */
+  overflow: auto; /* Permet de faire défiler le contenu de la modal si nécessaire */
+  background-color: rgba(0,0,0,0.5); /* Fond semi-transparent */
+}
+
+.modalContent{
+  position: relative;
+  background-color: #fefefe; /* Couleur de fond */
+  margin: 5% auto; /* Centrer verticalement et horizontalement */
+  padding: 40px;
+  border: 1px solid #888;
+  width: 70%; /* Largeur du contenu de la modal */
+}

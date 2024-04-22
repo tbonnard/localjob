@@ -1,0 +1,57 @@
+.logoutDiv {
+    margin-top: 20px;
+}
+
+.accountDetailsGlobalMaster{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top:30px;
+}
+
+.accountDetailsGlobal{
+    border: 1px solid #d9d8e0;
+    border-radius: 10px;
+    padding: 40px;
+    margin: 0 20px;
+    min-width: 300px;
+    max-width: 500px;
+    flex: 1 1 0px;
+    margin-top: -75px;
+    background-color: var(--main);
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+}
+
+.accountDetailsMid{
+    position: relative;
+    border: 1px solid #d9d8e0;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px 0px;
+}
+
+.newCompanyDiv{
+    margin-top: 20px;
+}
+
+.accountDetailsTop{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.accountDetailsGlobalTop{
+    display: flex;
+    background-color: var(--blue);
+    height: 200px;
+    border: 1px solid var(--blue);
+    border-radius: 10px;
+    width: 90%;
+}
+
+.accountDetailsGlobalTopText{
+    color: var(--main);
+    text-transform: uppercase;
+    padding: 15px;
+    font-weight: bold;
+}

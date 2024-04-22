@@ -1,0 +1,23 @@
+.companyDiv{
+    margin-top: 120px;
+}
+
+.commerceSearchList{
+    margin: 20px 0;
+}
+
+.companyEditToggle{
+    display: flex;
+    align-items: center;
+    margin-right: auto;
+}
+
+.urlCie:hover{
+    text-decoration: none;
+}
+
+.commerceColor{
+    background-color: var(--commerce) !important;
+    border-color: var(--commerce) !important;
+    color: var(--colorText) !important;
+}

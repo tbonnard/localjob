@@ -1,0 +1,122 @@
+.choicesGlobal {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.buttonChoices{
+    margin: 0 5px;
+    width: auto;
+    padding: 5px 10px;
+    background-color: white;
+    color: var(--main);
+    cursor: pointer;
+    outline: none;
+    border: 1px solid var(--projectInputDescrition);
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+.buttonChoices:hover{
+    background-color:  var(--greenMain);
+    color: white;
+    border: 1px solid var(--greenMain);
+}
+
+.buttonChoicesSelected {
+    background-color: var(--greenLight);
+    color: white;
+    border: 1px solid var(--greenLight);
+}
+
+.buttonChoicesSelected:hover {
+    background-color: var(--remove);
+    color: white;
+    border: 1px solid var(--remove);
+
+}
+
+
+.voteIconsDiv {
+    width: 30px;
+    padding: 0 5px;
+}
+
+.voteIconAllDefault {
+    cursor: pointer;
+    background-repeat: no-repeat;
+    width: 30px;
+    height: 30px;
+    background-position: center;
+    background-size: 30px;
+}
+
+
+/* https://www.flaticon.com/free-icon/check_6619101?k=1693473800022&log-in=email */
+.voteYesIcon {
+    background-image: url('../media/voteyes.png');
+}
+
+.voteYesIcon:hover {
+    background-image: url('../media/voteyesselected.png');
+}
+
+.voteYesIconSelected {
+    background-image: url('../media/voteyesselected.png');
+}
+
+.voteYesIconSelected:hover {
+    background-image: url('../media/voteyesremove.png');
+}
+
+
+/* https://www.flaticon.com/free-icon/forbidden_2576762?term=no&page=1&position=13&origin=search&related_id=2576762 */
+.voteNoIcon {
+    background-image: url('../media/voteno.png');
+}
+
+.voteNoIcon:hover {
+    background-image: url('../media/votenoselected.png');
+}
+
+.voteNoIconSelected {
+    background-image: url('../media/votenoselected.png');
+}
+
+.voteNoIconSelected:hover {
+    background-image: url('../media/votenoremove.png');
+}
+
+
+/* 64px */
+/* default --main:#354572; */
+/* selected   --greenLight:#7fb77e; */
+/* hover selected  --remove: #de6060; */
+
+/* https://www.flaticon.com/free-icon/shrug_5894030?term=what&page=1&position=19&origin=search&related_id=5894030 */
+.voteWhateverIcon {
+    background-image: url('../media/votewhatever.png');
+}
+
+.voteWhateverIcon:hover {
+    background-image: url('../media/votewhateverselected.png');
+}
+
+.voteWhateverIconSelected {
+    background-image: url('../media/votewhateverselected.png');
+}
+
+.voteWhateverIconSelected:hover {
+    background-image: url('../media/votewhateverremove.png');
+}
+
+
+@media (max-width: 400px) {
+    .buttonChoices{
+        margin: 5px;
+    }
+    .buttonChoicesSelected {
+        margin: 5px;
+    }
+
+  }

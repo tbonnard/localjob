@@ -1,0 +1,56 @@
+.standardContainer {
+    margin-top: 50px;
+    margin-bottom: 200px;
+  }
+  
+  .standardDiv{
+    color: var(--colorText);;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0px 20px;
+  }
+  
+  .standardDiv h3 {
+    padding-bottom: 60px;
+    color: var(--main);
+  }
+
+  .imageHowITWorks {
+    width: 50px;
+    margin-bottom: 20px;
+  }
+  
+
+  
+  .descriptionDivFlex {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+  }
+
+  .descriptionTextItem {
+    padding: 20px 0;
+    width: 100%;
+  }
+
+  .whySmall {
+    padding-top: 40px;
+  }
+
+  .whyButtonDiv{
+    padding-top: 40px;
+    text-align: center;
+  }
+    
+  .whyDiv {
+    padding-top: 10px;
+  }
+
+  @media (max-width: 900px) {
+
+    /* .standardDiv{
+      padding: 0px 20px;
+    } */
+
+  }

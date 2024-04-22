@@ -1,0 +1,90 @@
+.followedItems {
+    padding: 40px 0 0 0px;
+    color: var(--textMain);
+    max-width: 900px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.followedItem {
+    padding: 5px 0;
+}
+
+.buttonFollowed {
+    text-align: left !important;
+}
+
+.tabs {
+    display: flex;
+    justify-content: center;
+    margin-top: 0px;
+}
+
+.tab {
+    padding: 0 10px;
+    text-align: center;
+    /* width: 100%; */
+}
+
+.tabTitle {
+    text-transform: uppercase;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.tabSelected {
+    text-transform: uppercase;
+    font-size: 14px;
+    text-decoration: underline;
+    text-underline-offset:10px;
+}
+
+.tabTitle:hover {
+    text-transform: uppercase;
+}
+
+.tabItems{
+    display: flex;
+    justify-content: center;
+}
+
+.noFollowedItems {
+    margin-top: 10px;
+    text-align: center;
+}
+
+.buttonTabFollowedItems {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: baseline;
+    margin-bottom: 30px;
+    padding-top: 20px;
+}
+
+@media (max-width: 800px) {
+    .buttonFollowed{
+        text-underline-offset: 2px !important;
+    }
+
+    .buttonFollowed:hover{
+        text-underline-offset: 4px !important;
+    }
+
+    .tab {
+        padding: 0 10px;
+    }
+
+    .tab h3 {
+        font-size: 14px;
+        padding: 0;
+    }
+
+
+    .tabTitle:hover {
+        text-transform: uppercase;
+        font-size: 14px;
+    }
+  }
+

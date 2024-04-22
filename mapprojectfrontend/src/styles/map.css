@@ -1,0 +1,290 @@
+.divSearchMap{
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    height: calc(100vh - 60px);
+
+}
+
+.mapGlobal {
+    width: 100%;
+    overflow: hidden;
+    flex: 2;
+}
+
+
+.mapItem {
+    width: 100%;
+    height: calc(100vh - 60px);
+}
+
+
+.layerTitleAddressType {
+    display: flex;
+    align-items: center;
+}
+
+.layerTitleAddressType img{
+    padding-right: 10px;
+}
+
+.layerTitleAddressType p {
+    margin: 10px 0;
+}
+
+.layerTitleAddressType h3 {
+    margin: 0;
+    font-weight: bold;
+}
+
+.layerTitleMap {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.layerTitleInternal {
+    width: 100%;
+}
+
+.popUpNameGoIcon a:hover {
+    text-decoration: underline;
+    text-underline-offset:5px;
+}
+
+.popUpNameGoIcon a {
+    color: white !important;
+    text-align: center;
+}
+
+.goIcon {
+    cursor: pointer;
+    z-index: 501;
+    width: 20px;
+}
+
+.goIcon:hover {
+    opacity: 0.6;
+}
+
+
+
+.ListDiv{
+    max-width: 100px;
+    padding: 0 10px;
+}
+
+
+.searchMapButtons {
+    position: absolute;
+    left: 0; 
+    right: 0; 
+    top: 80px;
+    margin-left: auto; 
+    margin-right: auto; 
+    display: flex;
+    flex-direction: row;
+    z-index: 500;
+    width: fit-content;
+}
+
+
+
+.searchNearButtonDiv{
+    z-index: 500;
+    width: auto;
+    height: auto;
+    margin: 0 5px 0 0;
+}
+
+.searchNearButton {
+    /* background-color: var(--main);
+    color: white; */
+    background-color: white;
+    color: var(--textMain);
+    padding: 7px 15px 7px 10px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    text-align: left;
+    width: auto;
+    text-align: center;
+}
+
+.searchNearButton:hover {
+    background-color:var(--green);
+    color:var(--textMain);
+}
+
+.navigationIcon {
+    position: absolute;
+    width: 13px;
+    right: 3px;
+    top:10px;
+    z-index: 501;
+}
+
+
+.searchTurboPassButtonDiv {
+    z-index: 500;
+    width: auto;
+    height: auto;
+    margin: 0 0px 0 5px;
+
+}
+
+
+.legendGlobalDiv {
+    background-color: white;
+    color: var(--textMain);
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100px;
+    height: auto;
+    z-index: 500;
+    padding: 7px;
+    border-top-right-radius: 50%;
+}
+
+.legendIcons{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.legendGlobalDiv h4{
+    margin: 0;
+    padding: 5px 0;
+}
+
+.legendGlobalDiv img {
+    width: 18px;
+    margin: 0;
+    top: 12px;
+    right: 15px;
+}
+
+.legendDivItems {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 7px 0;
+}
+
+
+.imageLegend {
+    width: 15px;
+    padding: 0 10px;
+}
+
+
+.markerMap {
+    width: auto !important;
+}
+
+.divPopUpProjects{
+    height: auto;
+    width: 100%;
+}
+
+.markerProjectDivItem {
+    border: 1px solid rgb(239, 239, 239);
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.addSuggestionMarkerItem{
+    text-align: center;
+    margin-top: 40px;
+}
+
+.bottomMarkerActions{
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    top: 6px;
+    right: 6px;
+}
+
+
+.feedsHome {
+    /* padding-top: 50px; */
+    height: 100%;
+    overflow: auto;
+    display: flex;
+    justify-content: center;
+    flex: 1;
+}
+
+
+.contributionMap{
+    position: absolute;
+    bottom: 60px;
+    right: 0;
+    width: 180px;
+    height: 20px;
+    background-color: white;
+    text-align: center;
+}
+
+
+.iconMarkerMap {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+
+.iconMarkerMapLegend {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+}
+
+
+.iconMarkerMap img {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    left: 45%;
+    top:45%;
+}
+
+
+.iconMarkerMapWithJob{
+    background-color: var(--greenMain);
+}
+
+.iconMarkerMapNoJob{
+    background-color: var(--orange);
+}
+
+
+.leaflet-div-icon{
+    background: none;
+    border: none;
+}
+
+.leaflet-popup-close-button{
+    display: none;
+}
+
+.leaflet-popup-content-wrapper, .leaflet-popup-tip{
+ background-color: black;
+}
+
+@media (max-width: 1000px) {
+    .divSearchMap{
+        flex-direction: column;
+    }
+
+    .feedsHome, .mapGlobal {
+        flex: 1;
+      }
+  }
+
+

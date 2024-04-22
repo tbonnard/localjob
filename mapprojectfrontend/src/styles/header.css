@@ -1,0 +1,155 @@
+.MenuGlobal {
+  /* position: fixed;
+  right: 0;
+  top: 0px;
+  z-index: 501; */
+
+  /* width: 100%; */
+  /* height: 60px; */
+  background-color: var(--main);
+  display: flex;
+  justify-content: flex-end;
+  flex: 1;
+}
+
+.MenuGlobalInside {
+   position: fixed;
+  /*right: 0;
+  top: 0px;
+  z-index: 501; */
+
+  width: 100%;
+  /* height: 60px; */
+  /* background-color: var(--main); */
+  display: flex;
+  justify-content: flex-end;
+  z-index: 100;
+  height: 60px;
+  background-color: var(--main);
+}
+
+
+.MenuGlobalMenu {
+  /* margin-top: 15px;
+  background-color: white; */
+  /* margin-right: 10px; */
+  /* margin-right: 15px;
+  width: 50px;
+  height: 50px; */
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+}
+
+.menuIcon {
+  display: flex;
+}
+
+.menuIcon img {
+  cursor: pointer;
+  margin: 0 20px;
+  width: 30px;
+}
+
+
+.menuIcon:hover {
+  opacity: 0.6;
+}
+
+.MenuGlobalSubMenu {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  width: 125px;
+  height: auto;
+  margin-right: 0px !important;
+  padding: 10px 5px;
+  border-bottom-left-radius: 10px;
+}
+ 
+.subMenuButtonDiv{
+  padding-left: 10px;
+}
+
+ 
+.closeIconMenu{
+  position: absolute;
+  right: 0;
+  top: 0;
+  margin: 10px;
+  cursor: pointer;
+}
+
+.closeIconMenu:hover {
+  opacity: 0.6;
+}
+
+.textInfoProdIinfo {
+  position: absolute;
+  text-align: center;
+  color: #ffa96f;
+  top: 10px;
+  left: 10px;
+  font-size: 12px;
+  font-style: italic;
+  text-transform: uppercase;
+}
+
+.App-headerGlobal {
+  background-color: var(--main);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 98;
+}
+
+.App-headerHome {
+  background-color: var(--main);
+  width: 100%;
+  position: relative;
+}
+
+.App-header {
+  padding: 0px 20px;
+  display: flex;
+  justify-content: space-between;
+  max-width: 900px;
+  margin: 0 auto;
+  align-items: center;
+  height: 100px;
+  color: white;
+
+}
+
+.App-header-divLogo a, a:visited, a:hover, a:active {
+  color: inherit;
+}
+
+
+
+.headerPropertyDetails{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.headerPropertyName{
+  font-weight: bold;
+}
+
+
+.notificationIcon{
+  width: 20px;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+.notificationIcon:hover{
+ opacity: 0.8;
+}
+
+.headerTopRightAccount{
+  padding-bottom: 10px !important;
+}
+
