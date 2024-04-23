@@ -34,10 +34,6 @@ import Icons from './Icons';
 
 const MapOpenMid = ({mapQueryData, bounds}) => {
 
-  const map = useMap()
-  const dispatch = useDispatch()
-
-  const positionCenter = useSelector(store => store.centerPosition)
 
 //   icon = L.divIcon({
 //     className: 'custom-div-icon',
@@ -76,6 +72,11 @@ const MapOpenMid = ({mapQueryData, bounds}) => {
 
   // const iconsList = [, {'icon': greenIcon, 'description':'Avec emploi'}, {'icon': blueIcon, 'description':'Sans emploi'}]
   // , {'icon': GoldIconCenter, 'description':'centre'} 
+  
+  const map = useMap()
+  const dispatch = useDispatch()
+
+  const positionCenter = useSelector(store => store.centerPosition)
   
   useEffect(() => {
     dispatch(setPositionCenter(map.getCenter()))

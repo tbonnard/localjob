@@ -7,7 +7,7 @@
 }
 
 .projectsList{
-  width: 90%;
+  width: 97%;
   /* padding: 0px 20px;*/
   /* margin: 0 0 150px 0;  */
 }
@@ -47,16 +47,20 @@
 
 /* PROJECT ITEM */
 .ProjectGlobal{
-  border: 1px solid #e2e2e2;
   text-align: center;
-  margin: 40px 0;
+  margin: 10px 0;
   padding: 20px 40px;
-  border-radius: 5px;
+  border-radius: 10px;
+  background-color: white;
+  border: 1px solid #eeeeee;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+
 }
 
 .ProjectGlobal h2 {
   padding: 0 10px;
 }
+
 
 .ProjectGlobalProfile {
   border: 1px solid rgba(240, 240, 240, 0.25);
@@ -74,7 +78,8 @@
 .projectDiv{
   position: relative;
   padding: 0 0 0px 0;
-  margin: 10px 10px 0 10px;
+  /* margin: 10px 10px 0 10px; */
+  margin: 10px 0;
   text-align: left;
 }
 
@@ -341,7 +346,7 @@
 .saveDiv{
   position: absolute;
   top: 0px;
-  right: 0px;
+  right: -20px;
 }
 
 .iconProjectSave {

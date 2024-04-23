@@ -18,6 +18,8 @@ const MapOpen = ({mapQueryData}) => {
 
   const bounds = useSelector(state => state.bounds)
   //minZoom={13} 
+
+  
   return (
     <>
     

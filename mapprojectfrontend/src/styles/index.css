@@ -144,6 +144,7 @@ a:hover {
   height: 100%; /* Hauteur de la modal */
   overflow: auto; /* Permet de faire défiler le contenu de la modal si nécessaire */
   background-color: rgba(0,0,0,0.5); /* Fond semi-transparent */
+  
 }
 
 .modalContent{
@@ -151,6 +152,10 @@ a:hover {
   background-color: #fefefe; /* Couleur de fond */
   margin: 5% auto; /* Centrer verticalement et horizontalement */
   padding: 40px;
-  border: 1px solid #888;
+  /* border: 1px solid #888; */
   width: 70%; /* Largeur du contenu de la modal */
+  border: 1px solid #eeeeee;
+  /* box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px; */
+  border-radius: 10px;
+
 }

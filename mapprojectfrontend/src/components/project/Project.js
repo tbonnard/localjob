@@ -8,10 +8,9 @@ import Apply from '../save/Apply';
 import ApplyLink from '../save/ApplyLink';
 
 
-const Project = ({item, source=0}) => {
+const Project = ({item}) => {
     
   const [date, setDate] = useState('')
-  const [classProjectSource, setClassProjectSource] = useState('ProjectGlobal')
 
     useEffect(() => {
       const createdDate = new Date(item.created)
@@ -19,9 +18,6 @@ const Project = ({item, source=0}) => {
       const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }
       const output = createdDate.toLocaleDateString("fr-CA", options)
       setDate(output)
-      if (source===1) {
-        setClassProjectSource('ProjectGlobalProfile')
-      }
     },[item])
 
 
@@ -63,11 +59,11 @@ const Project = ({item, source=0}) => {
 
     
   return (
-    <div className={classProjectSource}>
+    <div className="ProjectGlobal">
                 
         <div className='projectDiv'>
-  
-          <Save project={item}/>
+
+        <Save project={item}/> 
 
             <div className='projectDivDetails'>
             <Link className='projectTitleName' to={`/job/${item.uuid}`}>{item.title}</Link>

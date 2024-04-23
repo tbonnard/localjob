@@ -100,6 +100,7 @@
     text-decoration: underline;
     margin-bottom: 10px;
     margin-top: 10px;
+    text-underline-offset: 2px;
 }
 
 .detailText{
@@ -110,7 +111,7 @@
 
 @media (max-width: 1300px) {
     .layerDiv{
-        width: 90%;
+        width: 85%;
     }
 
     .longLoadingDiv {

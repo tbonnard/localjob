@@ -85,9 +85,12 @@ const FollowItemsProjects = () => {
         {currentCommerce.length ===0 || currentCommerce.length >1 ? <></> : <button className={tabHome === 0 ? 'buttonTier selectedTab' : 'buttonTier'} onClick={() => handleTabButton(0)}>
              {currentCommerce.name}
             </button>}
+            <div className='marginMiddle'></div>
           <button className={tabHome === 1 ? 'buttonTier selectedTab' : 'buttonTier'} onClick={() => handleTabButton(1)}>Emplois à proximité</button>
+          <div className='marginMiddle'></div>
           {user && <button className={tabHome === 2 ? 'buttonTier selectedTab' : 'buttonTier'} onClick={() => handleTabButton(2)}>Commerces suivis</button>  }
-      </div>
+          </div>
+          
       
       {jobsToShow.length > 0 ? 
         jobsToShow.map((proj, ind) => <Project key={proj.id} item={proj} source={1}/> )

@@ -47,7 +47,7 @@ const CompanyProfile = () => {
             <p className='accountDetailsGlobalTopText commerceColor'>COMMERCE</p>
         </div>
 
-        <div className='accountDetailsGlobal'>
+        <div className='accountDetailsGlobal accountDetailsGlobalTopMargin'>
             <div className='accountDetailsTop'>
                 <img  src={profileImage}  alt="profil" title="profil"/>
                 <Follow />
@@ -72,7 +72,7 @@ const CompanyProfile = () => {
                 {cie.active ? <p className='infoTag infoTagSuccess'>actif</p> : <p className='infoTag infoTagError'>non actif</p> }
             </div>
         </div>
-        <div className='accountDetailsGlobal'>
+        <div className='accountDetailsGlobal accountDetailsGlobalTopMarginNext'>
             <div className='tabs'>
                 <div className='tab'>
                     <h3 className="tabTitle tabSelected">Emplois</h3>

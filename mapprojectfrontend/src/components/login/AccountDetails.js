@@ -57,7 +57,7 @@ const AccountDetails = () => {
                 <p className='accountDetailsGlobalTopText'>Mon Profil</p>
             </div>
 
-            <div className='accountDetailsGlobal'>
+            <div className='accountDetailsGlobal accountDetailsGlobalTopMargin'>
                 <div className='accountDetailsTop'>
                     <img  src={profileImage}  alt="profile" title="profile"/>
                 </div>
@@ -85,7 +85,7 @@ const AccountDetails = () => {
                     <Logout />
                 </div>
             </div>
-            <div className='accountDetailsGlobal'>
+            <div className='accountDetailsGlobal accountDetailsGlobalTopMarginNext'>
                 <FollowGlobal />
             </div>
                

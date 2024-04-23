@@ -14,20 +14,29 @@
     border-radius: 10px;
     padding: 40px;
     margin: 0 20px;
-    min-width: 300px;
+    min-width: 260px;
     max-width: 500px;
     flex: 1 1 0px;
-    margin-top: -75px;
     background-color: var(--main);
     box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
 }
 
+.accountDetailsGlobalTopMargin{
+    margin-top: -75px;
+}
+
+.accountDetailsGlobalTopMarginNext{
+    margin-top: -75px;
+}
+
 .accountDetailsMid{
     position: relative;
-    border: 1px solid #d9d8e0;
+    border: 1px solid #eeeeee;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     border-radius: 10px;
     padding: 20px;
     margin: 20px 0px;
+    background-color: white;
 }
 
 .newCompanyDiv{
@@ -55,3 +64,15 @@
     padding: 15px;
     font-weight: bold;
 }
+
+@media (max-width: 762px) {
+    .accountDetailsGlobalTopMarginNext {
+      margin-top: 20px !important;
+    }
+
+    .accountDetailsGlobalTop{
+        width: 95%;
+    }
+  }
+  
+  
