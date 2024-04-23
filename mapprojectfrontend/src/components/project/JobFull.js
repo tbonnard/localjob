@@ -113,10 +113,14 @@ const JobFull = () => {
           {/* <div class="triangle triangle2"></div> */}
           <div className='text-containerJob'>
 
-            <EditIcon onClick={handleEdit} owner={item.properties[0]["owner_uuid"]} />
+
+            <div className='editJobFull'>
+              <EditIcon onClick={handleEdit} owner={item.properties[0]["owner_uuid"]} />
+            </div>
 
             <div className='textJob'>
-            <Save  project={item}/>
+
+            <Save  project={item}/>            
 
             <Link className='projectTitleNameJobCie' to={`/commerce/${item.properties[0]["uuid"]}`}>{item.properties[0]["name"]}</Link>
 

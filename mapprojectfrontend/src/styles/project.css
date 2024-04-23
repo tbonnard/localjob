@@ -41,6 +41,7 @@
   font-size: 12px;
   color:var(--ultraLightText);
   /* padding: 0 0 0 10px; */
+  padding-right: 5px;
 }
 
 
@@ -264,6 +265,7 @@
   clip-path: polygon(0% 8%, 100% 25%, 100% 50%, 50% 100%, 10% 75%, 0% 25%);
 }
 
+/* https://codepen.io/yuanchuan/full/QWGWXPz */
 /* https://codepen.io/almonteluis/pen/LYJQjGg */
 
 
@@ -282,6 +284,12 @@
   border-radius: 10px;
 }
 
+.editJobFull {
+  position: absolute;
+  bottom: 50px;
+  right: 0px;
+
+}
 
 .textJob {
   color: var(--textMain);
