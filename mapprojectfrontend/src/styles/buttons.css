@@ -67,7 +67,7 @@
 
 
 .buttonTier {
-  background-color: var(--main) !important;
+  /* background-color: var(--main) !important; */
   border: none;
   border-radius: 10px;
   padding: 10px 10px !important;
