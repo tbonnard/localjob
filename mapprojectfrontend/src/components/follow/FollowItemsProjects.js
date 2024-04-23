@@ -96,7 +96,7 @@ const FollowItemsProjects = () => {
           {currentCommerce.name ?
           <p>pas d'emploi actuellement pour {currentCommerce.name}</p>
           :
-          <p>pas d'emploi dans les commerces dans cette zone</p>
+          <p>pas d'emploi dans les commerces dans cette zone, bouger la carte</p>
           }
         </div>       
       }

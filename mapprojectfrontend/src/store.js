@@ -22,6 +22,7 @@ import cieProjectReducer from './reducers/cieProjectReducer';
 import saveReducer from './reducers/saveReducer';
 import applyReducer from './reducers/applyReducer';
 import savedAppliedJobsReducer from './reducers/savedAppliedJobsReducer';
+import firstTimeCurrentLocReducer from './reducers/firstTimeCurrentLocReducer';
 
 import {logger} from './utils/middleware';
 
@@ -44,7 +45,8 @@ const appReducer = combineReducers({
     cieProject:cieProjectReducer,
     savedJobs:saveReducer,
     appliedJobs:applyReducer,
-    savedAppliedJobs:savedAppliedJobsReducer
+    savedAppliedJobs:savedAppliedJobsReducer,
+    firstTimeCurrentLoc:firstTimeCurrentLocReducer
   })
   
   const rootReducer = (state, action) => {
