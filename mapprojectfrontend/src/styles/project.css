@@ -259,13 +259,17 @@
   height: 100vh;
   /* background-color: #fbff7b; */
   background-color: var(--commerce);
-  clip-path: polygon(0 100%, 0 0, 100% 100%)
+  /* clip-path: polygon(0 100%, 0 0, 100% 100%) */
+  /* clip-path: polygon(0% 25%, 90% 8%, 20% 90%, 0% 10%); */
+  clip-path: polygon(0% 8%, 100% 25%, 100% 50%, 50% 100%, 10% 75%, 0% 25%);
 }
+
+/* https://codepen.io/almonteluis/pen/LYJQjGg */
 
 
 .text-containerJob {
   position: absolute;
-  top: 40%;
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 1; /* Ensure content is above triangles */
