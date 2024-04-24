@@ -25,6 +25,7 @@ import savedAppliedJobsReducer from './reducers/savedAppliedJobsReducer';
 import firstTimeCurrentLocReducer from './reducers/firstTimeCurrentLocReducer';
 
 import {logger} from './utils/middleware';
+import boundsPersistReducer from './reducers/boundsPersistReducer';
 
 const appReducer = combineReducers({
     mapQuery:mapQueryReducer,
@@ -35,6 +36,7 @@ const appReducer = combineReducers({
     followedProperties:followReducer,
     loadingFlag : loadingReducer,
     bounds:boundsReducer,
+    boundsPersists : boundsPersistReducer,
     userLocationFlag:userLocationReducer,
     followPropertiesGetProjects:followPropertiesGetProjectsReducer,
     searchItem:searchReducer,

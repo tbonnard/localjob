@@ -19,6 +19,7 @@ const getMapQueryData = async (parameterData) => {
 
 const getMapQueryDataParameter = async (itemObject) => {
   const response = await axios.post(`${urlParameter}`  ,  {itemObject})
+  // console.log(response.data)
   return response.data
 }
 

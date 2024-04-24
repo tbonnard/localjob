@@ -5,6 +5,7 @@ import { setLoading } from './loadingReducer'
 import { setLongLoading } from './loadingReducer'
 import { setItemToSearch } from './searchReducer'
 import { setBounds } from './boundsReducer'
+import { setPositionCenter } from './centerPositionReducer'
 
 export const getMapQueryData = (parameterData) => {
     return async dispatch => {
@@ -33,13 +34,23 @@ export const getMapQueryDataParameter = (parameterData) => {
         if (!propertyItem) {
             propertyItem = []
         }
+        // console.log(propertyItem)
         dispatch({
             type: "MAP_QUERY_PARAMETER",
             data: propertyItem
             })
             if (propertyItem.length === 0) {
                 dispatch(setNotification({message:'aucun résultat', style:'warning', time:5000}))
+            } else {
+                if (propertyItem.length ===1 ) {
+                    dispatch(setPositionCenter(propertyItem[0].lat,propertyItem[0].lon))
+                } else {
+                    let newBounds = []
+                    propertyItem.map((item) =>newBounds.push([parseFloat(item.lat), parseFloat(item.lon)]) )
+                    // console.log("BOUNDS SEARCH", newBounds)
+                    dispatch(setBounds(newBounds))
             } 
+        }
             dispatch(setLoading(false))
         }
 }
@@ -48,6 +59,7 @@ export const getMapQueryDataParameter = (parameterData) => {
 export const getMapQueryDataSearchNearLocation = (itemObject) => {
     return async dispatch => {
         dispatch(setLoading(true))
+        // console.log(itemObject)
         let propertyItem = await mapQueryServices.getMapQueryDataSearchNearLocation(itemObject)
         if (!propertyItem) {
             propertyItem = []

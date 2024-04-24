@@ -8,6 +8,11 @@ import '../../styles/searchForm.css'
 import { getMapQueryDataParameter } from '../../reducers/mapQueryReducer';
 import { setItemToSearch, resetItemToSearch} from '../../reducers/searchReducer';
 import {setTab} from '../../reducers/tabHomeReducer';
+import { resetNotif } from '../../reducers/notificationTempReducer';
+import { resetProjects } from '../../reducers/projectReducer';
+import { resetProperty } from '../../reducers/propertyReducer';
+import { resetNearbyProjects } from '../../reducers/allProjectsNearbyPropertiesReducer';
+import { getMapQueryDataSearchNearLocation } from '../../reducers/mapQueryReducer';
 
 import cancelIcon from '../../media/remove_input.png'
 import searchIcon from "../../media/search.png"
@@ -20,6 +25,8 @@ const SearchForm = () => {
 
 
   const [placeAddress, setPlaceAddress] = useState('')
+  const bounds = useSelector(state => state.bounds)
+
 
   const handleChange = (e) => {
     setPlaceAddress(e.target.value)
@@ -28,6 +35,12 @@ const SearchForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+        
+    dispatch(resetNotif())
+    dispatch(resetProperty())
+    dispatch(resetNearbyProjects())
+    dispatch(resetProjects())
+
     dispatch(setTab(1))
     dispatch(getMapQueryDataParameter(placeAddress))
     dispatch(setItemToSearch(placeAddress))
@@ -36,6 +49,13 @@ const SearchForm = () => {
   const closeLayer = () => {
     dispatch(resetItemToSearch())
     setPlaceAddress('')
+    const itemObject = {ne_lat: bounds[0][0],
+      ne_lng: bounds[0][1],
+      sw_lat: bounds[1][0],
+      sw_lng: bounds[1][1],
+    }
+    console.log(itemObject)
+    dispatch(getMapQueryDataSearchNearLocation(itemObject))
   }
 
   return (

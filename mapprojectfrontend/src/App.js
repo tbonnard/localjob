@@ -21,7 +21,7 @@ import CompanyCreate from './components/company/CompanyCreate';
 import Company from './components/company/Company';
 import JobFull from './components/project/JobFull';
 import Intro from "./components/home/Intro"
-
+import Map from './components/map/Map';
 
 import { getUserInfo } from '../src/reducers/userReducer'
 
@@ -77,7 +77,8 @@ function App() {
           <Route path='/'  element={
             <>
               <SearchForm />
-              <MapOpenGlobal />
+              {/* <MapOpenGlobal /> */}
+              <Map />
             </>
             } />
 

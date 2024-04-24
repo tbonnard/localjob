@@ -148,6 +148,8 @@ class PropertySearchParameter(APIView):
             # q_objects |= Q(name__icontains=term) | Q(display_name__icontains=term)
             q_objects &= Q(display_name__icontains=term)
         properties = Property.objects.filter(q_objects)
+        # for i in properties:
+          #  print(i.lat)
         if properties.exists():
             serializer = PropertySerializer(properties, many=True)
             return Response(serializer.data)
@@ -155,7 +157,7 @@ class PropertySearchParameter(APIView):
             return Response('No data', status=status.HTTP_204_NO_CONTENT)
 
 
-class PropertyQueryLocationView(APIView):
+class PropertyQueryLocationViewOLD(APIView):
     def post(self, request):
         coordinatesLatRequested = Decimal(request.data['itemObject']['latitude'])
         coordinatesLonRequested = Decimal(request.data['itemObject']['longitude'])
@@ -168,6 +170,40 @@ class PropertyQueryLocationView(APIView):
                     propertiesInDistance.append(i)
         if len(propertiesInDistance) > 0:
             serializer = PropertySerializer(propertiesInDistance, many=True)
+            return Response(serializer.data)
+        return Response('No data', status=status.HTTP_204_NO_CONTENT)
+
+class PropertyQueryLocationView(APIView):
+    def post(self, request):
+        #print(request.data)
+        # Get the bounds from the request parameters
+        ne_lat = request.data["itemObject"].get('ne_lat')
+        ne_lng = request.data["itemObject"].get('ne_lng')
+        sw_lat = request.data["itemObject"].get('sw_lat')
+        sw_lng = request.data["itemObject"].get('sw_lng')
+
+        # Validate the parameters
+        if not all([ne_lat, ne_lng, sw_lat, sw_lng]):
+            return JsonResponse({'error': 'Invalid parameters'}, status=400)
+
+        # Convert the parameters to float
+        try:
+            ne_lat = Decimal(ne_lat)
+            ne_lng = Decimal(ne_lng)
+            sw_lat = Decimal(sw_lat)
+            sw_lng = Decimal(sw_lng)
+        except ValueError:
+            return JsonResponse({'error': 'Invalid parameter values'}, status=400)
+
+        # Query your model to retrieve records within the bounds
+        records_within_bounds = Property.objects.filter(
+            lat__lte=ne_lat,
+            lat__gte=sw_lat,
+            lon__lte=ne_lng,
+            lon__gte=sw_lng
+        )
+        if len(records_within_bounds) > 0:
+            serializer = PropertySerializer(records_within_bounds, many=True)
             return Response(serializer.data)
         return Response('No data', status=status.HTTP_204_NO_CONTENT)
 

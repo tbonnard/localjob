@@ -1,7 +1,8 @@
 // https://stackoverflow.com/questions/65119745/get-current-coordinates-on-dragging-react-leaflet
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux'
+import React, {  useState, useEffect } from 'react';
 
-import {useMapEvents } from 'react-leaflet';
+import {useMap, useMapEvents } from 'react-leaflet';
 
 import { getMapQueryDataSearchNearLocation } from '../../reducers/mapQueryReducer';
 import { setBounds } from '../../reducers/boundsReducer';
@@ -9,49 +10,71 @@ import { setPositionCenter } from '../../reducers/centerPositionReducer';
 import { resetProperty } from '../../reducers/propertyReducer';
 import { resetNotif } from '../../reducers/notificationTempReducer';
 import { resetNearbyProjects } from '../../reducers/allProjectsNearbyPropertiesReducer';
-// bbox = left,bottom,right,top
-// bbox = min Longitude , min Latitude , max Longitude , max Latitude 
-// south Latitude, north Latitude, west Longitude, east Longitude
-
+import { resetProjects } from '../../reducers/projectReducer';
+import { setBoundsPersist } from '../../reducers/boundsPersistReducer';
+import { resetItemToSearch } from '../../reducers/searchReducer';
 
 const MapDraggable = () => {
 
   const dispatch = useDispatch()
+  
+  const map = useMap()
 
-  const map = useMapEvents({
-    dragend: (e) => {
-      dispatch(setPositionCenter(e.target.getCenter()))
-      // console.log("mapCenter", e.target.getCenter());
-      // console.log("map bounds", e.target.getBounds());
+  const boundsPersist = useSelector(state => state.boundsPersist)
+  const searching = useSelector(state => state.searchItem)
 
-      const boundsToSet = [[parseFloat(e.target.getBounds()['_northEast']['lat']), parseFloat(e.target.getBounds()['_northEast']['lng'])], [parseFloat(e.target.getBounds()['_southWest']['lat']), parseFloat(e.target.getBounds()['_southWest']['lat'])]]
-      // console.log(boundsToSet)
-      // dispatch(setBounds(boundsToSet))
-      
-      const itemObject = {latitude:e.target.getCenter()['lat'], longitude:e.target.getCenter()['lng']}
-      dispatch(getMapQueryDataSearchNearLocation(itemObject))
-      dispatch(resetNotif())
-      dispatch(resetProperty())
-      dispatch(resetNearbyProjects())
+  const triggerMapQueryChange = (boundsToSend) => {
+    const itemObject = {ne_lat: boundsToSend._northEast.lat,
+      ne_lng: boundsToSend._northEast.lng,
+      sw_lat: boundsToSend._southWest.lat,
+      sw_lng: boundsToSend._southWest.lng,
+    }
+
+    dispatch(getMapQueryDataSearchNearLocation(itemObject))
+
+    dispatch(setBoundsPersist([[boundsToSend._northEast.lat, boundsToSend._northEast.lng],[boundsToSend._southWest.lat, boundsToSend._southWest.lng]]))
+    
+    dispatch(resetNotif())
+    dispatch(resetProperty())
+    dispatch(resetNearbyProjects())
+    dispatch(resetProjects())
+  }
+
+  useMapEvents({
+    zoomlevelschange: e => {
+      // dispatch(resetItemToSearch())
+      if (!searching) {
+        const boundsUpdate = e.target.getBounds();
+        triggerMapQueryChange(boundsUpdate);
+      }
     },
-    click: (e) => {
-      const zoomCurrent = map.getZoom()
-      // console.log(e.latlng.lat,e.latlng.lng);
-      map.flyTo([e.latlng.lat,e.latlng.lng], zoomCurrent)
-      dispatch(setPositionCenter([e.latlng.lat,e.latlng.lng]))
-      const itemObject = {latitude:e.latlng.lat, longitude:e.latlng.lng}
-      dispatch(getMapQueryDataSearchNearLocation(itemObject))
-      dispatch(resetNotif())
-      dispatch(resetProperty())
-      dispatch(resetNearbyProjects())
-
-        }
+    zoomend: e => {
+      // dispatch(resetItemToSearch())
+      if (!searching) {
+        const boundsUpdate = e.target.getBounds();
+        triggerMapQueryChange(boundsUpdate);
+      }
+    },
+    dragend: e => {
+      dispatch(resetItemToSearch())
+      if (!searching) {
+        dispatch(setPositionCenter(e.target.getCenter()));
+        const boundsUpdate = e.target.getBounds();
+        triggerMapQueryChange(boundsUpdate);
+      }
+    },
+    click: e => {
+      dispatch(resetItemToSearch())
+      const boundsUpdate = e.target.getBounds();
+      if (!searching) {
+        triggerMapQueryChange(boundsUpdate);
+        const zoomCurrent = map.getZoom();
+        map.flyTo([e.latlng.lat, e.latlng.lng], zoomCurrent);
+      }
+    }
   });
 
-  return (
-   null
-      
-  )
+  return null;
 }
 
 export default MapDraggable

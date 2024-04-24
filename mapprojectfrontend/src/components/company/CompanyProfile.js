@@ -30,14 +30,10 @@ const CompanyProfile = () => {
         if(cie.id) {
             // console.log({cie, user})
             dispatch(getProjectsfromPropertyActiveOrNot({cie, user}))
-        }
+        } 
     },[cie, dispatch])
 
  
-    if (cie.length === 0) {
-        navigate('/')
-    }
-
     return (
     <div className='accountDetailsGlobalMaster'>
 

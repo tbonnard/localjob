@@ -17,7 +17,7 @@ const CurrentLocation = ({defaultCoordinates, setIsGeoloc, setCoordinatesToSet})
 
     const SuccessGeoLoc = (position) => {
         if (position.coords) {
-            console.log("SUCC")
+            // console.log("SUCC")
             // console.log("WHEN ALLOWED", {latitude:position.coords.latitude, longitude:position.coords.longitude})
             setCoordinates({latitude:position.coords.latitude, longitude:position.coords.longitude})
             dispatch(setPositionCenter([position.coords.latitude,position.coords.longitude] ))
@@ -35,7 +35,7 @@ const CurrentLocation = ({defaultCoordinates, setIsGeoloc, setCoordinatesToSet})
 
     const updateErrorCount = (error) => {
         if (error.code) {
-            console.log("TEST ERROR")
+            // console.log("TEST ERROR")
             dispatch(setNotification({message:'la localisation est bloquée, un lieu par défaut est affiché', style:'warning', time:5000}))
             setCoordinates(defaultCoordinates);
             const itemObject = { latitude: defaultCoordinates.latitude, longitude: defaultCoordinates.longitude };
@@ -48,7 +48,7 @@ const CurrentLocation = ({defaultCoordinates, setIsGeoloc, setCoordinatesToSet})
 
 
         useEffect(() => {
-            console.log("TEST")
+            // console.log("TEST")
             const options = {
                 enableHighAccuracy: true,
             };

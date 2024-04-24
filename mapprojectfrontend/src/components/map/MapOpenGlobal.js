@@ -28,27 +28,23 @@ const MapOpenGlobal = () => {
       const [isGeoloc, setIsGeoloc ] = useState(false)
       const [coordinatesToSet, setCoordinatesToSet ] = useState(defaultCityCoordinates)
 
-  
-   
+
       useEffect(() => {
             setMapData(mapQueryData)
             if (mapQueryData.length > 0 && searchItemvalue) {
-                  // if (searchItemvalue || isGeoloc) {
                         let newBounds = []
                         mapQueryData.map((item) =>newBounds.push([item.lat, item.lon]) )
-                        // console.log("NEW BOUNDS", newBounds)
-                        dispatch(setBounds(newBounds))
+                        // console.log("BOUNDS SEARCH", newBounds)
+                        if (mapQueryData.length ===1 ) {
+                              let newBoundsOne = newBounds
+                              mapQueryData.map((item) =>newBoundsOne.push([item.lat, item.lon]) )
+                              dispatch(setBounds(newBoundsOne))
+                        } else {
+                              dispatch(setBounds(newBounds))
+                        }
                         dispatch(resetItemToSearch())
-                        // console.log("BOUNDS", newBounds)
-
-                  // }
+              
             } else {
-                  if (isGeoloc) {
-                        const newBounds = [[coordinatesToSet.latitude, coordinatesToSet.longitude ],[coordinatesToSet.latitude-0.01, coordinatesToSet.longitude-0.04]]
-                        // console.log("NEW BOUNDS", newBounds)
-                        dispatch(setBounds(newBounds))    
-                        setIsGeoloc(false)        
-                  }
         
                   if (loadingFlag) {
                         dispatch(setNotification({message:'aucun résultat', style:'warning', time:5000}))
@@ -60,12 +56,17 @@ useEffect(() => {
       dispatch(setFirstTimeUserLocation())
 },[])
 
+useEffect(() => {
+      setMapData(mapQueryData)
+},[mapQueryData])
+
   return (
       <div className='divSearchMap'>
    
-            {firstTimeCurrentLoc && 
+            {/* {firstTimeCurrentLoc && 
                   <CurrentLocation defaultCoordinates={defaultCityCoordinates} setIsGeoloc={setIsGeoloc} setCoordinatesToSet={setCoordinatesToSet} />
-            }
+            } */}
+            
             <div className='mapGlobal' id='map' >
                   <MapOpen mapQueryData={mapData} />
             </div>

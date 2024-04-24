@@ -23,8 +23,8 @@ const boundsReducer = (state= [
 ], action) => {
     switch(action.type) {
         case 'ADD_BOUND':
-            return [...action.data]
-        case 'ADD_BOUND':
+            return action.data
+        case 'SET_BOUND_CREATE':
             return action.data
         default:
             return state

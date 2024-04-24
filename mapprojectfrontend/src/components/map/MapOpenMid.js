@@ -73,20 +73,20 @@ const MapOpenMid = ({mapQueryData, bounds}) => {
   // const iconsList = [, {'icon': greenIcon, 'description':'Avec emploi'}, {'icon': blueIcon, 'description':'Sans emploi'}]
   // , {'icon': GoldIconCenter, 'description':'centre'} 
   
-  const map = useMap()
+  // const map = useMap()
   const dispatch = useDispatch()
 
   const positionCenter = useSelector(store => store.centerPosition)
   
-  useEffect(() => {
-    dispatch(setPositionCenter(map.getCenter()))
-    },[dispatch, mapQueryData])
+  // useEffect(() => {
+  //   dispatch(setPositionCenter(map.getCenter()))
+  //   },[dispatch, mapQueryData])
 
 
 
   return (
     <>
-        <MapDraggable />
+        {/* <MapDraggable /> */}
         
         {/* <div className='searchMapButtons'>
           <SearchNearPoint map={map} bounds={bounds}/>
@@ -99,16 +99,16 @@ const MapOpenMid = ({mapQueryData, bounds}) => {
        {/* marker central si besoin */}
         {/* <Marker position={positionCenter} icon={GoldIconCenter} /> */}
 
-        <Legend />
+        {/* <Legend /> */}
 
         {/* <div className='contributionMap'>
           <a href="https://www.openstreetmap.org/copyright" target='_blank'>© OpenStreetMap contributors</a>
         </div> */}
-      
+{/*       
           <TileLayer
                     attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors - <a href="https://www.openstreetmap.org/copyright">"ODbL" 1.0</a>'
                     url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-                  />
+                  /> */}
 
 {/* ios vibe map - mais un peu sombre */}
            {/* <TileLayer 
@@ -125,18 +125,18 @@ const MapOpenMid = ({mapQueryData, bounds}) => {
      */}
     
         {/* light - agreable */}
-    <TileLayer 
+        {/* <TileLayer 
                 attribution='CartoDB.Voyager'
                 url='https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png'
-            />
+            /> */}
 
-         {mapQueryData.map((mapData, inde) => {
+         {/* {mapQueryData.map((mapData, inde) => {
             let sourceOSM = true
             if (mapData['with_suggestions']) {sourceOSM = false}   
                 return (
                   <Icons key={inde+mapData.uuid+mapData.id} sourceOSM={sourceOSM} ind={mapData.uuid} markerData={mapData} />
                 );
-              })}
+              })} */}
     </>
 
       

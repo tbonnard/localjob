@@ -7,18 +7,19 @@
 import React from 'react';
 import {  useSelector } from 'react-redux'
 
-import { MapContainer } from 'react-leaflet';
+import { MapContainer, TileLayer } from 'react-leaflet';
 
 import '../../styles/map.css'
 
 import LoadingIcon from '../global/LoadingIcon';
-import MapOpenMid from './MapOpenMid';
+import MapDraggable from './MapDraggable';
+import Legend from './Legend';
+import MapMarkers from './MapMarkers';
 
 const MapOpen = ({mapQueryData}) => {
 
   const bounds = useSelector(state => state.bounds)
   //minZoom={13} 
-
   
   return (
     <>
@@ -27,7 +28,21 @@ const MapOpen = ({mapQueryData}) => {
           
         <LoadingIcon />
 
-        <MapOpenMid mapQueryData={mapQueryData} bounds={bounds} />
+        <MapDraggable />
+
+        <Legend />
+
+        <MapMarkers mapQueryData={mapQueryData}/>
+            
+        <TileLayer
+                    attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors - <a href="https://www.openstreetmap.org/copyright">"ODbL" 1.0</a>'
+                    url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                  />
+
+        <TileLayer 
+                attribution='CartoDB.Voyager'
+                url='https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png'
+            />
     
       </MapContainer>
 
