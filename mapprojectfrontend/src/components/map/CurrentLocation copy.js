@@ -19,7 +19,7 @@ const CurrentLocation = ({bounds}) => {
 
     const SuccessGeoLoc = (position) => {
         if (position.coords) {
-            // console.log("WHEN ALLOWED")
+            console.log("WHEN ALLOWED")
             const newBoundsToSend = {ne_lat: position.coords.latitude,
                 ne_lng: position.coords.longitude,
                 sw_lat: position.coords.latitude-0.02,
@@ -37,20 +37,14 @@ const CurrentLocation = ({bounds}) => {
 
     const updateErrorCount = (error) => {
         if (error.code) {
-            // console.log("WHEN BLOCKED")
+            console.log("WHEN BLOCKED")
             dispatch(getMapQueryDataSearchNearLocation(boundsToSend));
             dispatch(setNotification({message:'la localisation est bloquée, un lieu par défaut est affiché', style:'warning', time:5000}))
             }
         }
 
-        useEffect(() => {
-            navigator.permissions.query({name:'geolocation'}).then(permissionStatus => {
-                // console.log('Geolocation permission state:', permissionStatus.state);
-                if (permissionStatus.state === "prompt") {
-                    dispatch(getMapQueryDataSearchNearLocation(boundsToSend));
-                }
-              });            
 
+        useEffect(() => {
             // console.log("TEST")
             const options = {
                 enableHighAccuracy: true,

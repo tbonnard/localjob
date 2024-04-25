@@ -5,7 +5,7 @@ import { setLoading } from './loadingReducer'
 import { setLongLoading } from './loadingReducer'
 import { setItemToSearch } from './searchReducer'
 import { setBounds } from './boundsReducer'
-import { setPositionCenter } from './centerPositionReducer'
+
 
 export const getMapQueryData = (parameterData) => {
     return async dispatch => {
@@ -43,7 +43,8 @@ export const getMapQueryDataParameter = (parameterData) => {
                 dispatch(setNotification({message:'aucun résultat', style:'warning', time:5000}))
             } else {
                 if (propertyItem.length ===1 ) {
-                    dispatch(setPositionCenter(propertyItem[0].lat,propertyItem[0].lon))
+                    const newBoundsToSet = [[propertyItem[0].lat, propertyItem[0].lon],[propertyItem[0].lat-0.02,propertyItem[0].lon-0.08]]
+                    dispatch(setBounds(newBoundsToSet))
                 } else {
                     let newBounds = []
                     propertyItem.map((item) =>newBounds.push([parseFloat(item.lat), parseFloat(item.lon)]) )

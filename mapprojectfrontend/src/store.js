@@ -11,10 +11,8 @@ import userReducer from './reducers/userReducer';
 import followReducer from './reducers/followReducer';
 import loadingReducer from './reducers/loadingReducer';
 import boundsReducer from './reducers/boundsReducer';
-import userLocationReducer from './reducers/userLocationReducer';
 import followPropertiesGetProjectsReducer from './reducers/followPropertiesGetProjectsReducer'
 import searchReducer from './reducers/searchReducer';
-import centerPositionReducer from './reducers/centerPositionReducer';
 import allProjectsNearbyPropertiesReducer from './reducers/allProjectsNearbyPropertiesReducer';
 import tabHomeReducer from './reducers/tabHomeReducer';
 import userPropertyReducer from './reducers/userPropertyReducer';
@@ -25,7 +23,7 @@ import savedAppliedJobsReducer from './reducers/savedAppliedJobsReducer';
 import firstTimeCurrentLocReducer from './reducers/firstTimeCurrentLocReducer';
 
 import {logger} from './utils/middleware';
-import boundsPersistReducer from './reducers/boundsPersistReducer';
+
 
 const appReducer = combineReducers({
     mapQuery:mapQueryReducer,
@@ -36,11 +34,8 @@ const appReducer = combineReducers({
     followedProperties:followReducer,
     loadingFlag : loadingReducer,
     bounds:boundsReducer,
-    boundsPersists : boundsPersistReducer,
-    userLocationFlag:userLocationReducer,
     followPropertiesGetProjects:followPropertiesGetProjectsReducer,
     searchItem:searchReducer,
-    centerPosition:centerPositionReducer,
     allProjectsNearbyProperties:allProjectsNearbyPropertiesReducer,
     tabHome : tabHomeReducer,
     userProperty:userPropertyReducer,
@@ -48,7 +43,7 @@ const appReducer = combineReducers({
     savedJobs:saveReducer,
     appliedJobs:applyReducer,
     savedAppliedJobs:savedAppliedJobsReducer,
-    firstTimeCurrentLoc:firstTimeCurrentLocReducer
+    firstTimeCurrentLoc:firstTimeCurrentLocReducer,
   })
   
   const rootReducer = (state, action) => {

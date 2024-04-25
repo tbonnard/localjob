@@ -15,15 +15,11 @@ import Legend from './Legend';
 import MapDraggable from './MapDraggable';
 import SearchAroundCenterParameter from './SearchAroundCenterParameter';
 
-import { setPositionCenter } from '../../reducers/centerPositionReducer';
-
 import shop from '../../media/addresstype/shop.png'
 import Icons from './Icons';
 
 
-// FIXME: when new project, marker icon does not update (need to research)
-
-  // TODO: custom images in icon based on type
+  // Custom images in icon based on type
   // https://blogs.absyz.com/2019/04/03/customizing-the-markers-in-your-leaflet-map
   // https://github.com/pointhi/leaflet-color-markers
   // https://github.com/lennardv2/Leaflet.awesome-markers
@@ -79,7 +75,6 @@ const MapOpenMid = ({mapQueryData, bounds}) => {
   const positionCenter = useSelector(store => store.centerPosition)
   
   // useEffect(() => {
-  //   dispatch(setPositionCenter(map.getCenter()))
   //   },[dispatch, mapQueryData])
 
 

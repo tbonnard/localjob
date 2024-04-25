@@ -9,12 +9,10 @@ import {
 import './styles/App.css';
 import './styles/buttons.css';
 
-import MapOpenGlobal from './components/map/MapOpenGlobal'
 import UserInfo from './components/login/UserInfo';
 import LoginForm from './components/login/LoginForm';
 import AccountForm from './components/login/AccountForm';
 import NotificationTemp from './components/global/NotificationTemp'
-import Menu from './components/global/Menu';
 import ProjectForm from './components/project/ProjectForm';
 import SearchForm from './components/map/SearchForm';
 import CompanyCreate from './components/company/CompanyCreate';
@@ -26,13 +24,6 @@ import Map from './components/map/Map';
 import { getUserInfo } from '../src/reducers/userReducer'
 
 import csrfServices from '../src/services/csrfService'
-
-
-
-// TODO: environment var django
-// TODO: share a job
-// TODO: report job
-// TODO: Get user data for analytics, country api…
 
 
 function App() {
@@ -77,7 +68,6 @@ function App() {
           <Route path='/'  element={
             <>
               <SearchForm />
-              {/* <MapOpenGlobal /> */}
               <Map />
             </>
             } />

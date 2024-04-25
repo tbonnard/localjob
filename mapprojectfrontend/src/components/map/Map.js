@@ -4,8 +4,8 @@
 // https://nominatim.openstreetmap.org/search.php?q=query&polygon_geojson=1&format=jsonv2
 // https://wiki.openstreetmap.org/wiki/Map_features
 
-import React from 'react';
-import {  useSelector } from 'react-redux'
+import React, { useEffect } from 'react';
+import {  useSelector, useDispatch } from 'react-redux'
 
 import { MapContainer, TileLayer } from 'react-leaflet';
 
@@ -16,21 +16,29 @@ import MapDraggable from './MapDraggable';
 import Legend from './Legend';
 import MapMarkers from './MapMarkers';
 import FollowItemsProjects from '../follow/FollowItemsProjects';
+import CurrentLocation from './CurrentLocation';
+
+
 
 const Map = () => {
+  const dispatch = useDispatch()
 
   const mapQueryData = useSelector(state => state.mapQuery)
   const bounds = useSelector(state => state.bounds)
   const centerPosition = useSelector(state => state.centerPosition)
-  
-  //minZoom={13} 
+  const firstTimeCurrentLoc = useSelector(store => store.firstTimeCurrentLoc)
+
 
   return (
     <div className='divSearchMap'>
     
       <div className='mapGlobal' id='map' >
-        <MapContainer className='mapItem' bounds={bounds} key={bounds} center={[centerPosition[0], centerPosition[1]]} scrollWheelZoom={true} >
-            
+        <MapContainer className='mapItem' bounds={bounds} key={bounds} scrollWheelZoom={true} >
+  
+          {firstTimeCurrentLoc && 
+            <CurrentLocation bounds ={bounds} />
+          }
+
           <LoadingIcon />
 
           <MapDraggable  /> 
