@@ -22,6 +22,7 @@ const MapDraggable = () => {
 
   const boundsPersist = useSelector(state => state.boundsPersist)
   const searching = useSelector(state => state.searchItem)
+  const [movingMap, setMovingMap] = useState(false)
 
   const triggerMapQueryChange = (boundsToSend) => {
     const itemObject = {ne_lat: boundsToSend._northEast.lat,
@@ -32,15 +33,28 @@ const MapDraggable = () => {
 
     dispatch(getMapQueryDataSearchNearLocation(itemObject))
 
-    dispatch(setBoundsPersist([[boundsToSend._northEast.lat, boundsToSend._northEast.lng],[boundsToSend._southWest.lat, boundsToSend._southWest.lng]]))
+    // dispatch(setBoundsPersist([[boundsToSend._northEast.lat, boundsToSend._northEast.lng],[boundsToSend._southWest.lat, boundsToSend._southWest.lng]]))
     
     dispatch(resetNotif())
     dispatch(resetProperty())
     dispatch(resetNearbyProjects())
     dispatch(resetProjects())
+    setMovingMap(false)
   }
 
   useMapEvents({
+    movestart: () => setMovingMap(true),
+    moveend: e => {
+      // if (!movingMap && !searching) {
+          const boundsToSend = e.target.getBounds();
+          const itemObject = {ne_lat: boundsToSend._northEast.lat,
+            ne_lng: boundsToSend._northEast.lng,
+            sw_lat: boundsToSend._southWest.lat,
+            sw_lng: boundsToSend._southWest.lng,
+          }
+          dispatch(setBounds([[boundsToSend._northEast.lat, boundsToSend._northEast.lng],[boundsToSend._southWest.lat, boundsToSend._southWest.lng]]))
+          // }
+    },
     zoomlevelschange: e => {
       // dispatch(resetItemToSearch())
       if (!searching) {
@@ -73,6 +87,13 @@ const MapDraggable = () => {
       }
     }
   });
+
+
+  useEffect(() => {
+    if(!movingMap && boundsPersist) {
+      dispatch(setBounds(boundsPersist))
+    }
+  },[])
 
   return null;
 }

@@ -140,12 +140,13 @@
     color: var(--textMain);
     position: absolute;
     left: 0;
-    bottom: 0;
+    top: 90px;
     width: 100px;
     height: auto;
     z-index: 500;
     padding: 7px;
-    border-top-right-radius: 50%;
+    /* border-top-right-radius: 50%; */
+    /* text-align: end; */
 }
 
 .legendIcons{
@@ -277,6 +278,7 @@
  background-color: black;
 }
 
+
 @media (max-width: 1000px) {
     .divSearchMap{
         flex-direction: column;
@@ -285,6 +287,14 @@
     .feedsHome, .mapGlobal {
         flex: 1;
       }
+      .legendGlobalDiv {
+        right: 0 ;
+        top: 0px;
+        left: unset;
+        text-align: end;
+        background-color: var(--main);
+    }
   }
+
 
 
