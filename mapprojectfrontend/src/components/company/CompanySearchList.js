@@ -5,10 +5,9 @@ import { useNavigate } from 'react-router-dom';
 import '../../styles/user.css'
 
 import {propertyCreation} from "../../reducers/propertyReducer"
-import { getNewCreatedMapQuery } from '../../reducers/mapQueryReducer';
 
 
-const CompanySearchList = (prop) => {
+const CompanySearchList = () => {
     const dispatch = useDispatch()
     const navigate = useNavigate();
 

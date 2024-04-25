@@ -11,7 +11,6 @@ import { createProject } from '../../reducers/projectReducer';
 import '../../styles/project.css'
 import '../../styles/layer1stLevel.css'
 
-import closeIcon from '../../media/close.png'
 import CloseIconBack from '../global/CloseIconBack';
 
 
@@ -22,9 +21,6 @@ const ProjectForm = () => {
 
     const user = useSelector(state => state.user)
     const property = useSelector(state => state.property)
-
-    const [title, setTitle] = useState('')
-    const [description, setDescription] = useState('')
 
     const [formData, setFormData] = useState({
         title: '',
@@ -57,10 +53,11 @@ const ProjectForm = () => {
             property:property
           };
         // console.log(formDataWithUser);
-        dispatch(createProject(formDataWithUser))
-        setTitle('')
-        setDescription('')
-        window.history.back() 
+        dispatch(createProject(formDataWithUser)).then((createdItemUUID) => {
+            // Utilisation de l'ID créé pour naviguer
+            navigate(`/job/${createdItemUUID}`);
+        });
+
     }
 
     const handleClick = () => {

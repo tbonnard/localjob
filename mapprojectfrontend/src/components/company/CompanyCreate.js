@@ -2,8 +2,6 @@ import React, {  useState } from 'react';
 import { useDispatch, useSelector  } from 'react-redux'
 import { useNavigate } from 'react-router-dom';
 
-import CloseIcon from '../global/CloseIcon';
-
 
 import '../../styles/user.css'
 
@@ -19,33 +17,12 @@ const CompanyCreate = () => {
 
     const [commerce, setCommerce] = useState([])
 
-    const getAddress = (address) => {
-
-        // https://myprojects.geoapify.com/api/HH5JqhL9gLRYFWtwiQml/statistics
-
-        const key = "cd9d14c94c8d437da090fa3d47171f1b"
-        var requestOptions = {
-            method: 'GET',
-          };
-          
-          fetch(`https://api.geoapify.com/v1/geocode/autocomplete?text=${address}&apiKey=${key}`, requestOptions)
-            .then(response => response.json())
-            .then((result) => {
-                // for (const address of result.features) {
-                //         console.log(address)
-                // }
-            }
-            )
-            .catch(error => console.log('error', error));
-    }
-
         const handleChange = (e) => {
             setCommerce(e.target.value) 
         };
     
         const handleSearchCompany = (e) => {
             e.preventDefault()
-            // getAddress(commerce)
             // console.log(commerce)
             dispatch(getMapQueryData(commerce))
         }
@@ -58,7 +35,6 @@ const CompanyCreate = () => {
     return (
         <div className='layerDiv'>
             
-        {/* <CloseIcon /> */}
         <CloseIconBack />
 
             <div className=''>

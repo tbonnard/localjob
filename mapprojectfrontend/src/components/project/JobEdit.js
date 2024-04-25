@@ -40,13 +40,13 @@ const JobEdit = ({functionClick, project}) => {
             user: user,
         };
         // console.log(formDataWithUser);
-        console.log(formDataWithUser)
+        // console.log(formDataWithUser)
         dispatch(editProject(formDataWithUser)).then(() => {
             handleClose();
         })
         .catch((error) => {
             // Handle errors if needed
-            console.log(error)
+            // console.log(error)
         });
     }
 

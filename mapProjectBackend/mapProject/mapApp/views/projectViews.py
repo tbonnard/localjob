@@ -172,6 +172,16 @@ class ProjectDetailsView(APIView):
         if validate_record_owner_user(request.data["user"]["uuid"], request.data["id"] , 1):
             if serializer.is_valid():
                 serializer.save()
+                property_project = instance.property
+                property_jbs = Project.objects.filter(property=property_project, active=True)
+                if len(property_jbs) > 0:
+                    if property_project.with_suggestions is False:
+                        property_project.with_suggestions = True
+                        property_project.save()
+                else:
+                    if property_project.with_suggestions is True:
+                        property_project.with_suggestions = False
+                        property_project.save()
                 return Response(serializer.data)
             return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
         return Response('No right', status=status.HTTP_403_FORBIDDEN)

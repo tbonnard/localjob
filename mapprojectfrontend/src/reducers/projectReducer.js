@@ -25,6 +25,7 @@ export const createProject = (itemObject) => {
                 dispatch(setPropertyItem(itemObject['property']));
                 window.scrollTo({left: 0, top:0,  behavior: "smooth"});
                 dispatch(setNotification({message:'emploi créé', style:'success', time:10000}))
+                return project.uuid
         } catch(exception) {
             dispatch(setNotification({message:'erreur lors de la création', style:'error', time:10000}))
         }
