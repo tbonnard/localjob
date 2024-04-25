@@ -48,9 +48,9 @@ export const setPropertyItem = (itemObject) => {
         const propertyItem = await propertyServices.checkIfPropertyCreated(itemObject)
         if (propertyItem) {
             newItem = propertyItem
-            localStorage.setItem('propertyProjectApp', JSON.stringify(propertyItem));
+            // localStorage.setItem('propertyProjectApp', JSON.stringify(propertyItem));
         } else {
-            localStorage.setItem('propertyProjectApp', JSON.stringify(newItem));
+            // localStorage.setItem('propertyProjectApp', JSON.stringify(newItem));
         }
         dispatch({
             type: "SET_PROPERTY_ITEM",

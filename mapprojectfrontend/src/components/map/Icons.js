@@ -99,7 +99,7 @@ import wine from '../../media/addresstype/wine.png'
 import gift from '../../media/addresstype/gift.png'
 import flower from '../../media/addresstype/flower.png'
 import golf from '../../media/addresstype/golf.png'
-
+import jewelry from "../../media/addresstype/jewelry.png"
 
 const Icons = ({sourceOSM, ind, markerData}) => {
 
@@ -193,6 +193,7 @@ const Icons = ({sourceOSM, ind, markerData}) => {
         "island":island,
         "industrial": industrial,
         "internet_cafe":web,
+        "jewelry":jewelry,
         "kindergarten":school,
         "kitchen":kitchen,
         "kneipp_water_cure":water,

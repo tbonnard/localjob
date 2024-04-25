@@ -17,7 +17,7 @@ const propertyCreation = async (itemObject) => {
       'X-CSRFToken': csrftoken,
       'Content-Type': 'application/json',
     }} );
-  localStorage.setItem('propertyProjectApp', JSON.stringify(response.data));
+  // localStorage.setItem('propertyProjectApp', JSON.stringify(response.data));
   return response.data
 }
 
@@ -41,14 +41,14 @@ const propertyEdit =  async (itemObject) => {
 const checkIfPropertyCreated = async (itemObject) => {
   const response = await axios.post(`${urlCheck}`, itemObject );
   if (response.status === 200) {
-    localStorage.setItem('propertyProjectApp', JSON.stringify(response.data));
+    // localStorage.setItem('propertyProjectApp', JSON.stringify(response.data));
   }
   return response.data
 }
 
 const getPropertyDetails = async (uuid) => {
   const response = await axios.get(`${url}${uuid}` );
-  localStorage.setItem('propertyProjectApp', JSON.stringify(response.data));
+  // localStorage.setItem('propertyProjectApp', JSON.stringify(response.data));
   return response.data
 }
 
