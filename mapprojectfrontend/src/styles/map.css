@@ -284,9 +284,14 @@
         flex-direction: column;
     }
 
-    .feedsHome, .mapGlobal {
-        flex: 1;
+    .mapGlobal {
+        flex: 65%;
       }
+
+      .feedsHome {
+        flex: 35%;
+      }
+
       .legendGlobalDiv {
         right: 0 ;
         top: 0px;
