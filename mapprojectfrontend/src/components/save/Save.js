@@ -12,6 +12,8 @@ import '../../styles/buttons.css'
 import saveIcon from '../../media/save.png'
 import savedIcon from '../../media/saved.png'
 
+import ReactGA from 'react-ga';
+
 
 const Save = ({project}) => {
     
@@ -41,12 +43,22 @@ const Save = ({project}) => {
 
 
 
-  const handleClickSave = () => {        
+  const handleClickSave = () => {       
+    ReactGA.event({
+      category: 'Button',
+      action: 'Save Job',
+      label: project.id,
+    }); 
     dispatch(addSave({user:user.uuid, job:project.id}))
     dispatch(setNotification({message:'emploi sauvegardé', style:'success', time:4000}))
   }
 
   const handleClickUnsave = () => {
+    ReactGA.event({
+      category: 'Button',
+      action: 'Unsave Job',
+      label: project.id,
+    }); 
     dispatch(removeSave(projectSaved.id))
     dispatch(setNotification({message:'emploi retiré', style:'success', time:4000}))
   }

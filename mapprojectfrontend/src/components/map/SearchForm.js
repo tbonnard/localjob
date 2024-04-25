@@ -19,6 +19,8 @@ import searchIcon from "../../media/search.png"
 import informationIcon from '../../media/information.png'
 import Menu from '../global/Menu';
 
+import ReactGA from 'react-ga';
+
 const SearchForm = () => {
     
   const dispatch = useDispatch()
@@ -34,6 +36,12 @@ const SearchForm = () => {
   }
 
   const handleSubmit = (e) => {
+    ReactGA.event({
+      category: 'Search',
+      action: 'Search on map',
+      label: placeAddress,
+    });
+
     e.preventDefault();
         
     dispatch(resetNotif())

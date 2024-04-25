@@ -6,6 +6,9 @@ import {
   Route,
 } from "react-router-dom"
 
+import ReactGA from 'react-ga';
+import { useLocation } from 'react-router-dom';
+
 import './styles/App.css';
 import './styles/buttons.css';
 
@@ -28,13 +31,21 @@ import csrfServices from '../src/services/csrfService'
 
 function App() {
   
+  ReactGA.initialize('G-PJ2YDY4ZXH');
   const dispatch = useDispatch()
+
+  const location = useLocation();
+
+  useEffect(() => {
+    ReactGA.pageview(location.pathname + location.search);
+  }, [location]);
 
   useEffect(() => {
     csrfServices.getCsrfToken()
     dispatch(getUserInfo())
 
   },[dispatch])
+
 
   return (
       <div className="App">
