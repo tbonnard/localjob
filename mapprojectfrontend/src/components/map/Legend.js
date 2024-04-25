@@ -38,7 +38,8 @@ const Legend = () => {
 
 
             <div className='legendIcons'>
-                <div className='iconMarkerMapLegend iconMarkerMapWithJob'></div> 
+                <div className='iconMarkerMapLegend iconMarkerMapWithJob'>
+                    </div> 
                 <span>avec emploi</span>
             </div>
 

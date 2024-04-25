@@ -4,7 +4,7 @@
 // https://nominatim.openstreetmap.org/search.php?q=query&polygon_geojson=1&format=jsonv2
 // https://wiki.openstreetmap.org/wiki/Map_features
 
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import {  useSelector, useDispatch } from 'react-redux'
 
 import { MapContainer, TileLayer } from 'react-leaflet';
@@ -19,16 +19,18 @@ import FollowItemsProjects from '../follow/FollowItemsProjects';
 import CurrentLocation from './CurrentLocation';
 
 
-
 const Map = () => {
   const dispatch = useDispatch()
 
   const mapQueryData = useSelector(state => state.mapQuery)
   const bounds = useSelector(state => state.bounds)
-  const centerPosition = useSelector(state => state.centerPosition)
   const firstTimeCurrentLoc = useSelector(store => store.firstTimeCurrentLoc)
 
+  useEffect(() =>  {
 
+  },[firstTimeCurrentLoc])
+
+  
   return (
     <div className='divSearchMap'>
     
@@ -36,7 +38,7 @@ const Map = () => {
         <MapContainer className='mapItem' bounds={bounds} key={bounds} scrollWheelZoom={true} >
   
           {firstTimeCurrentLoc && 
-            <CurrentLocation bounds ={bounds} />
+            <CurrentLocation bounds = {bounds} />
           }
 
           <LoadingIcon />

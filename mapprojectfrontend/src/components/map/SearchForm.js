@@ -16,8 +16,8 @@ import { getMapQueryDataSearchNearLocation } from '../../reducers/mapQueryReduce
 
 import cancelIcon from '../../media/remove_input.png'
 import searchIcon from "../../media/search.png"
-import informationIcon from '../../media/information.png'
 import Menu from '../global/Menu';
+import Locate from './Locate';
 
 import ReactGA from 'react-ga';
 
@@ -95,6 +95,8 @@ const SearchForm = () => {
   
         </form>
         <Menu />
+        <Locate />
+
     </div>
   )
 }

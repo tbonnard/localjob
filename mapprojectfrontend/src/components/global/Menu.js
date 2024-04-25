@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom'
 import profileIcon from '../../media/profile.png'
 import informationIcon from '../../media/information.png'
 
-
 const Menu = () => {
 
   
@@ -12,7 +11,7 @@ const Menu = () => {
     <div className='MenuGlobal'>
        
             <div className='MenuGlobalMenu'>
-
+            
                 <Link to={`/information`} className='menuIcon' >
                     <img 
                         src={informationIcon}  

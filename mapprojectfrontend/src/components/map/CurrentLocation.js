@@ -6,6 +6,7 @@ import { setNotification } from '../../reducers/notificationTempReducer'
 import { getMapQueryDataSearchNearLocation } from '../../reducers/mapQueryReducer'
 import { setBounds } from '../../reducers/boundsReducer'
 import { setFirstTimeUserLocation } from '../../reducers/firstTimeCurrentLocReducer';
+import { setBoundsGeolocStart } from '../../reducers/boundsGeolocStartReducer'
 
 const CurrentLocation = ({bounds}) => {    
     
@@ -28,6 +29,7 @@ const CurrentLocation = ({bounds}) => {
             dispatch(getMapQueryDataSearchNearLocation(newBoundsToSend))
             const newBoundsToSet = [[position.coords.latitude, position.coords.longitude],[position.coords.latitude-0.02,position.coords.longitude-0.08]]
             dispatch(setBounds(newBoundsToSet))
+            dispatch(setBoundsGeolocStart(newBoundsToSend))
             dispatch(setNotification({message:'commerces locaux dans un rayon de 10km', style:'success', time:5000}))
         } else {
             dispatch(setNotification({message:'une erreur dans la localisation, un lieu par défaut est affiché', style:'warning', time:5000}))

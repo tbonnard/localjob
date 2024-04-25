@@ -147,6 +147,7 @@
     padding: 7px;
     /* border-top-right-radius: 50%; */
     /* text-align: end; */
+    pointer-events: none;
 }
 
 .legendIcons{
@@ -277,6 +278,21 @@
 .leaflet-popup-content-wrapper, .leaflet-popup-tip{
  background-color: black;
 }
+
+.locateIcon{
+    cursor: pointer;
+    position: absolute;
+    top: 85px;
+    left: 65px;
+    z-index: 800;
+}
+
+.locateIcon img{
+    /* cursor: pointer; */
+    width: 30px;
+}
+
+
 
 
 @media (max-width: 1000px) {

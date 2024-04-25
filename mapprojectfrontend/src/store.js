@@ -21,6 +21,7 @@ import saveReducer from './reducers/saveReducer';
 import applyReducer from './reducers/applyReducer';
 import savedAppliedJobsReducer from './reducers/savedAppliedJobsReducer';
 import firstTimeCurrentLocReducer from './reducers/firstTimeCurrentLocReducer';
+import  boundsGeolocStartReducer from './reducers/boundsGeolocStartReducer';
 
 import {logger} from './utils/middleware';
 
@@ -44,6 +45,7 @@ const appReducer = combineReducers({
     appliedJobs:applyReducer,
     savedAppliedJobs:savedAppliedJobsReducer,
     firstTimeCurrentLoc:firstTimeCurrentLocReducer,
+    boundsGeolocStart:boundsGeolocStartReducer
   })
   
   const rootReducer = (state, action) => {
