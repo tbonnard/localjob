@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom'
 
 import { getProjectsfromPropertyActiveOrNot } from '../../reducers/cieProjectReducer';
 
@@ -11,6 +12,7 @@ import ProjectsList from '../project/ProjectsList'
 import AddJob from '../project/AddJob';
 import EditIcon from '../global/EditIcon';
 import CompanyEdit from './CompanyEdit';
+import urlIcon from "../../media/url.png"
 
 const CompanyProfile = () => {
     const dispatch = useDispatch()
@@ -45,7 +47,7 @@ const CompanyProfile = () => {
 
         <div className='accountDetailsGlobal accountDetailsGlobalTopMargin'>
             <div className='accountDetailsTop'>
-                <img  src={profileImage}  alt="profil" title="profil"/>
+                <img className='profilImage' src={profileImage}  alt="profil" title="profil"/>
                 <Follow />
             </div>
             <div className='accountDetailsMid'>
@@ -55,7 +57,13 @@ const CompanyProfile = () => {
                 <p className='labelText'>Adresse</p>
                 <p className='detailText'>{cie.house_number} {cie.road} {cie.city} {cie.postcode} {cie.state} {cie.country}</p>
                 <p className='labelText'>URL</p>
-                <p className='detailText'><a className='urlCie' target='_blank' href={cie.url}>{cie.url}</a></p>
+                <Link to={cie.url} target='_blank' >
+                    <img  className='profileIcon'
+                        src={urlIcon}  
+                        alt='Site web du commerce'
+                    />
+                </Link>
+                {/* <p className='detailText'><a className='urlCie' target='_blank' href={cie.url}>{cie.url}</a></p> */}
             </div>
             <div className='accountDetailsMid'>
                 <EditIcon onClick={handleEdit} owner={cie.owner_uuid} />

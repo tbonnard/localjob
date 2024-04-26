@@ -20,17 +20,20 @@ const CurrentLocation = ({bounds}) => {
 
     const SuccessGeoLoc = (position) => {
         if (position.coords) {
+            const buffer = 0.04
             // console.log("WHEN ALLOWED")
-            const newBoundsToSend = {ne_lat: position.coords.latitude,
-                ne_lng: position.coords.longitude,
-                sw_lat: position.coords.latitude-0.02,
-                sw_lng: position.coords.longitude-0.08,
+            const newBoundsToSend = {ne_lat: position.coords.latitude+buffer,
+                ne_lng: position.coords.longitude+buffer,
+                sw_lat: position.coords.latitude-buffer,
+                sw_lng: position.coords.longitude-buffer,
               }
+            //   console.log(position.coords.latitude)
+            //   console.log(newBoundsToSend)
             dispatch(getMapQueryDataSearchNearLocation(newBoundsToSend))
-            const newBoundsToSet = [[position.coords.latitude, position.coords.longitude],[position.coords.latitude-0.02,position.coords.longitude-0.08]]
+            const newBoundsToSet = [[position.coords.latitude-buffer, position.coords.longitude-buffer],[position.coords.latitude+buffer,position.coords.longitude+buffer]]
             dispatch(setBounds(newBoundsToSet))
             dispatch(setBoundsGeolocStart(newBoundsToSend))
-            dispatch(setNotification({message:'commerces locaux dans un rayon de 10km', style:'success', time:5000}))
+            dispatch(setNotification({message:'commerces locaux aux alentours', style:'success', time:5000}))
         } else {
             dispatch(setNotification({message:'une erreur dans la localisation, un lieu par défaut est affiché', style:'warning', time:5000}))
         }

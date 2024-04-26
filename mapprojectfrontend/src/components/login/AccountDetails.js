@@ -59,7 +59,7 @@ const AccountDetails = () => {
 
             <div className='accountDetailsGlobal accountDetailsGlobalTopMargin'>
                 <div className='accountDetailsTop'>
-                    <img  src={profileImage}  alt="profile" title="profile"/>
+                    <img className='profilImage' src={profileImage}  alt="profile" title="profile"/>
                 </div>
                 <div className='accountDetailsMid'>
                     

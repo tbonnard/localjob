@@ -42,11 +42,7 @@ const MapDraggable = () => {
     movestart: () => setMovingMap(true),
     moveend: e => {
           const boundsToSend = e.target.getBounds();
-          const itemObject = {ne_lat: boundsToSend._northEast.lat,
-            ne_lng: boundsToSend._northEast.lng,
-            sw_lat: boundsToSend._southWest.lat,
-            sw_lng: boundsToSend._southWest.lng,
-          }
+          // console.log(boundsToSend)
           dispatch(setBounds([[boundsToSend._northEast.lat, boundsToSend._northEast.lng],[boundsToSend._southWest.lat, boundsToSend._southWest.lng]]))
     },
     // zoomlevelschange: e => {

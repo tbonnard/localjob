@@ -43,7 +43,10 @@ export const getMapQueryDataParameter = (parameterData) => {
                 dispatch(setNotification({message:'aucun résultat', style:'warning', time:5000}))
             } else {
                 if (propertyItem.length ===1 ) {
-                    const newBoundsToSet = [[propertyItem[0].lat, propertyItem[0].lon],[propertyItem[0].lat-0.02,propertyItem[0].lon-0.08]]
+                    const buffer = 0.01
+                    const newBoundsToSet = [[Number(propertyItem[0].lat)+buffer, Number(propertyItem[0].lon)+buffer],[Number(propertyItem[0].lat)-buffer,Number(propertyItem[0].lon)-buffer]]
+                    // const newBoundsToSet = [[Number(propertyItem[0].lat), Number(propertyItem[0].lon)],[Number(propertyItem[0].lat)-0.02,Number(propertyItem[0].lon)-0.08]]
+                    // const newBoundsToSet = [[Number(propertyItem[0].lat)-0.001, Number(propertyItem[0].lon)],[Number(propertyItem[0].lat),Number(propertyItem[0].lon)]]
                     dispatch(setBounds(newBoundsToSet))
                 } else {
                     let newBounds = []
